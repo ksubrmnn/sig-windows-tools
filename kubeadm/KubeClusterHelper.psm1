@@ -237,7 +237,7 @@ function CleanupPolicyList()
     }
 }
 
-function WaitForNetwork($NetworkName, $waitTimeSeconds = 60)
+function WaitForNetwork($NetworkName, $waitTimeSeconds = 120)
 {
     $startTime = Get-Date
 
