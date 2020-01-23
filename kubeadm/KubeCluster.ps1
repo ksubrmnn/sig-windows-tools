@@ -242,7 +242,7 @@ if ($install.IsPresent)
     InstallKubernetesBinaries -Destination  $Global:BaseDir -Source $Global:ClusterConfiguration.Kubernetes.Source
     DownloadCniBinaries -NetworkMode $Global:NetworkMode -CniPath $(GetCniPath)
 
-    if (!(Test-Path "$(GetUserDir)/.ssh/id_rsa.pub"))
+    <#if (!(Test-Path "$(GetUserDir)/.ssh/id_rsa.pub"))
     {
         if (!$force.IsPresent)
         {
@@ -267,7 +267,7 @@ if ($install.IsPresent)
     
         Write-Host "touch ~/.ssh/authorized_keys"
         Write-Host "echo $pubKey >> ~/.ssh/authorized_keys"
-    }
+    }#>
 
     Write-Host "Please close this shell and open a new one to join this node to the cluster."
 
