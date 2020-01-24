@@ -108,7 +108,8 @@ function LoadGlobals()
     $Global:ServercoreImage = $Global:ClusterConfiguration.Cri.Images.ServerCore
     $Global:Cni = $Global:ClusterConfiguration.Cni.Name
     $Global:Release = $Global:ClusterConfiguration.Kubernetes.Source.Release
-    $Global:InterfaceName = $Global:ClusterConfiguration.Cni.InterfaceName
+    #FIX LATER
+    $Global:InterfaceName = "Ethernet 2"
     $Global:NetworkPlugin =$Global:ClusterConfiguration.Cni.Plugin.Name
     $Global:Cri = $Global:ClusterConfiguration.Cri.Name
     $Global:ClusterCIDR = $Global:ClusterConfiguration.Kubernetes.Network.ClusterCidr
