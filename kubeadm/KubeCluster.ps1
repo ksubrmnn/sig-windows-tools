@@ -69,7 +69,7 @@ if ($help.IsPresent)
     exit
 }
 
-function ReadKubeclusterConfig($ConfigFile)
+function ReadKubeclusterConfigLocal($ConfigFile)
 {
     # Read the configuration and initialize default values if not found
     $Global:ClusterConfiguration = ConvertFrom-Json ((GetFileContent $ConfigFile -ErrorAction Stop) | out-string)
@@ -146,7 +146,7 @@ $hnsDestination = "$PSScriptRoot\hns.psm1"
 DownloadFile -Url $hnsPath -Destination $hnsDestination
 Import-Module $hnsDestination
 
-ReadKubeclusterConfig -ConfigFile $ConfigFile
+ReadKubeclusterConfigLocal -ConfigFile $ConfigFile
 InitHelper
 PrintConfig
 WriteKubeClusterConfig
