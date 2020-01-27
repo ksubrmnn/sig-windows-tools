@@ -781,7 +781,7 @@ function InstallKubelet()
 
     # Investigate why the below doesn't work, probably a syntax error with the args
     #New-Service -Name "kubelet" -StartupType Automatic -BinaryPathName "$kubeletArgs"
-    & cmd /c kubeadm join "$(GetAPIServerEndpoint)" --token "$Global:Token" --discovery-token-ca-cert-hash "$Global:CAHash" '2>&1'
+    & cmd /c kubeadm join "$(GetAPIServerEndpoint)" --token "$Global:Token" --discovery-token-ca-cert-hash "$Global:CAHash" --v=5'2>&1'
     if (!$?) { Write-Warning "Error joining cluster, exiting."; exit; }
 
     # Open firewall for 10250. Required for kubectl exec pod <>
