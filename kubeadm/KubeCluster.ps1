@@ -337,7 +337,7 @@ if ($Join.IsPresent)
     InstallCNI -Cni $Global:Cni -NetworkMode $Global:NetworkMode `
         -ManagementIP $Global:ManagementIp `
         -InterfaceName $Global:InterfaceName `
-        -CniPath $(GetCniPath)
+        -CniPath $(GetCniPath) > C:\cnilogs.txt 2>&1
 
     if ($Global:Cni -eq "flannel")
     {

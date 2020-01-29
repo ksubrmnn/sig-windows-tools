@@ -783,7 +783,7 @@ function InstallKubelet()
     #New-Service -Name "kubelet" -StartupType Automatic -BinaryPathName "$kubeletArgs"
     #& cmd /c "(C:\programdata\Kubernetes\kubernetes\node\bin\kubeadm.exe join "$(GetAPIServerEndpoint)" --token "$Global:Token" --discovery-token-ca-cert-hash "$Global:CAHash" --v=5 --ignore-preflight-errors=)  > C:\kubeadmlogs.txt 2>&1"
     kubeadm join "$(GetAPIServerEndpoint)" --token "$Global:Token" --discovery-token-ca-cert-hash "$Global:CAHash" --v=5 --ignore-preflight-errors=IsPrivilegedUser > C:\kubeadmlogs.txt 2>&1
-    if (!$?) { Write-Warning "Error joining cluster, exiting."; exit; }
+    #if (!$?) { Write-Warning "Error joining cluster, exiting."; exit; }
 
     # Open firewall for 10250. Required for kubectl exec pod <>
     if (!(Get-NetFirewallRule -Name KubeletAllow10250 -ErrorAction SilentlyContinue ))
