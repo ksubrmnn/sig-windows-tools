@@ -226,7 +226,7 @@ if ($install.IsPresent)
 {
     if (InstallContainersRole)
     {
-        $res = 'Y'
+        <#$res = 'Y'
         if (!$force.IsPresent)
         {
             $res = Read-Host "Continue to Reboot the host [Y/n] - Default [Y]"
@@ -235,7 +235,7 @@ if ($install.IsPresent)
         if ($res -eq '' -or $res -eq 'Y'  -or $res -eq 'y')
         {
             Restart-And-Run
-        }
+        } #>
     }
 
     InstallCRI $Global:Cri
